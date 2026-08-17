@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -56,4 +57,8 @@ dependencies {
     implementation(libs.ktor.client.cio)
     implementation(libs.logback.classic)
     implementation(platform(libs.ktor.bom))
+    implementation("io.ktor:ktor-client-content-negotiation:${"3.5.2"}")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:${"3.5.2"}")
+    // kotlinx serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 }

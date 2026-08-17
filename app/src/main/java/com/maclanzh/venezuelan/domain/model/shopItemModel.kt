@@ -1,4 +1,4 @@
-package com.maclanzh.venezuelan.model
+package com.maclanzh.venezuelan.domain.model
 
 import kotlinx.serialization.Serializable
 
