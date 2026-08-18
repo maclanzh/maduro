@@ -21,7 +21,12 @@ val client = HttpClient(CIO){
 
 // api calls
 
-suspend fun fetchProducts() : List<Product> {
-    return client.get("https://fakestoreapi.com/products").body()
+class ProductApi(
+    private val client: HttpClient
+){
+    suspend fun fetchProducts() : List<Product> {
+        return client.get("https://fakestoreapi.com/products").body()
+    }
 }
+
 
