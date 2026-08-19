@@ -61,4 +61,10 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json:${"3.5.2"}")
     // kotlinx serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
+    // koin
+    implementation("io.insert-koin:koin-android:${"4.2.1"}")
+    implementation("io.insert-koin:koin-androidx-compose:${"4.2.1"}")
+    // coil
+    implementation("io.coil-kt.coil3:coil-compose:3.5.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.5.0")
 }

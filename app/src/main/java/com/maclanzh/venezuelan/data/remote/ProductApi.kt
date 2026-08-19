@@ -1,5 +1,10 @@
 package com.maclanzh.venezuelan.data.remote
 
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import androidx.core.content.ContextCompat.getSystemService
+import coil3.network.NetworkRequest
 import com.maclanzh.venezuelan.domain.model.Product
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -10,8 +15,8 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 // httpClient
-val client = HttpClient(CIO){
-    install(ContentNegotiation){
+val client = HttpClient(CIO) {
+    install(ContentNegotiation) {
         json(Json {
             ignoreUnknownKeys = true
             isLenient = true
@@ -28,5 +33,6 @@ class ProductApi(
         return client.get("https://fakestoreapi.com/products").body()
     }
 }
+
 
 

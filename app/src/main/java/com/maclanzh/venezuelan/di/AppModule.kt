@@ -1,3 +1,6 @@
 package com.maclanzh.venezuelan.di
 
-// TODO: implement di with koin or hilt
+val appModule = listOf(
+    networkModule,
+    productModule
+)
