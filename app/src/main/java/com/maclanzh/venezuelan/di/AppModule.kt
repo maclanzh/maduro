@@ -1,6 +1,6 @@
 package com.maclanzh.venezuelan.di
 
-val appModule = listOf(
+val appModules = listOf(
     networkModule,
     productModule
 )

@@ -1,8 +1,7 @@
 package com.maclanzh.venezuelan
 
 import android.app.Application
-import com.maclanzh.venezuelan.di.appModule
-import io.ktor.http.ContentType
+import com.maclanzh.venezuelan.di.appModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -15,7 +14,7 @@ class Myapp: Application(){
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@Myapp)
-            modules(appModule)
+            modules(appModules)
         }
     }
 }
