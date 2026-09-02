@@ -21,7 +21,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    println("commit test new pc")
                     ProductScreen(
                         viewmodel = koinViewModel()
                     )
