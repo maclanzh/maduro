@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -33,6 +34,12 @@ android {
     buildFeatures {
         compose = true
     }
+
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+        }
+    }
 }
 
 dependencies {
@@ -51,4 +58,19 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    //ktor
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.logback.classic)
+    implementation(platform(libs.ktor.bom))
+    implementation("io.ktor:ktor-client-content-negotiation:${"3.5.2"}")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:${"3.5.2"}")
+    // kotlinx serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
+    // koin
+    implementation("io.insert-koin:koin-android:${"4.2.1"}")
+    implementation("io.insert-koin:koin-androidx-compose:${"4.2.1"}")
+    // coil
+    implementation("io.coil-kt.coil3:coil-compose:3.5.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.5.0")
 }
