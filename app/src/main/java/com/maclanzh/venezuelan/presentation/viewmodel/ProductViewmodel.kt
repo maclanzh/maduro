@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maclanzh.venezuelan.domain.model.Product
 import com.maclanzh.venezuelan.domain.usecase.GetProductUseCase
+import com.maclanzh.venezuelan.presentation.state.ProductUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -27,10 +28,4 @@ class ProductViewmodel(
             }
         }
     }
-}
-
-sealed interface ProductUiState {
-    object Loading : ProductUiState
-    data class Success(val products : List<Product>) : ProductUiState
-    data class Error(val message : String) : ProductUiState
 }
