@@ -14,7 +14,6 @@ import io.ktor.client.request.get
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-// httpClient
 val client = HttpClient(CIO) {
     install(ContentNegotiation) {
         json(Json {
@@ -23,8 +22,6 @@ val client = HttpClient(CIO) {
         })
     }
 }
-
-// api calls
 
 class ProductApi(
     private val client: HttpClient
