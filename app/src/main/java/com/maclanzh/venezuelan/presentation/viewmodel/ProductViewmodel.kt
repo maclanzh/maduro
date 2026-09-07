@@ -16,10 +16,6 @@ class ProductViewmodel(
     private val _uistate = MutableStateFlow<ProductUiState>(ProductUiState.Loading)
     val uiState : StateFlow<ProductUiState> = _uistate.asStateFlow()
 
-    init {
-        loadProducts()
-    }
-
     fun loadProducts(){
         viewModelScope.launch {
             _uistate.value = ProductUiState.Loading
