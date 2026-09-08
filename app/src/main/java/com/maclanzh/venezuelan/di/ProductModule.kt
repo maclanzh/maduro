@@ -9,11 +9,8 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val productModule = module {
-    // data layer
     single { ProductApi(get()) }
     single<ProductRepository> { ProductRepositoryImpl(get()) }
-    // domain layer
     factory { GetProductUseCase(get()) }
-    // Presentation Layer
     viewModel { ProductViewmodel(get()) }
 }
